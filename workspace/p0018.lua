@@ -16,13 +16,14 @@ file:close()
 -- VARS
 local count		= {}
 local max		= {}
+local top		= 3
 local sum		= 0
 
 -- LOGIC
 max.i		= #data
 count.i	= 1
 while (count.i <= max.i) do
-	max.j 	= #data[count.i]
+	max.j	 	= #data[count.i]
 	count.j 	= 1
 	max.row 	= 0
 	while (count.j <= max.j) do 

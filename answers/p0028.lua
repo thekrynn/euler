@@ -7,23 +7,26 @@ local dtu_s		= socket.gettime() * 1000
 
 -- VARS
 local count		= {}
-local num		= 1000
-local pow		= 0
-local sum		= 0
+local max		= {}
+local num 		= 1001
+local sum		= 1
 
 -- LOGIC
-pow 			= tostring(math.pow(2,num))
-count.pow 	= string.len(pow)
-count.sum	= 1
+count.num 	= 1
+count.size 	= 1
+while (count.size < num) do	
 
-print(split())
-print(math.floor(math.pow(2,num) / math.pow(10,301)))
-os.exit()
+	count.spiral = 1
+	while (count.spiral <= 4) do				
+		count.num 		= count.num + (count.size + 1)
+		
+		sum 			= sum + count.num
+		count.spiral 	= count.spiral + 1		
+	end
 
-while (count.sum <= count.pow) do	
-	sum = sum + string.sub(pow,count.sum,count.sum)
-	count.sum = count.sum + 1
+	count.size 	= count.size + 2
 end
+
 
 -- ANSWER + TIME
 local dtu_e 	= math.floor( ((socket.gettime() * 1000) - dtu_s) * 1000) / 1000
